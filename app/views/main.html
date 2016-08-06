@@ -1,0 +1,30 @@
+<div class="container">
+
+  <input type="text" class="form-control input-lg" restricted ng-model="busqueda" ng-change="buscar(0)">
+Resultados para {{busqueda}}
+<br><br>
+
+  <div ng-hide="nothing==false">
+    No hay resultados
+  </div>
+
+  <div infinite-scroll='buscar(1)' infinite-scroll-distance='1'>
+
+
+    
+  <div ng-repeat="item in items">
+
+   
+    <div class="jumbotron col-xs-6">
+
+  <p class="lead">
+    <a href="#/imdbID/{{item.imdbID}}"><img ng-src="{{item.Poster}}" height="200px"></a><br>
+    <h5>{{item.Title}}</h5>
+  </p>
+  
+</div>
+
+  </div>
+  </div>
+
+</div>
